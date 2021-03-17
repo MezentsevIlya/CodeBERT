@@ -604,16 +604,16 @@ def main():
     # Evaluation
     results = {}
     if args.do_eval:
-        checkpoint_prefix = 'checkpoint-best-f1/model.bin'
-        output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-        model.load_state_dict(torch.load(output_dir))
+#         checkpoint_prefix = 'checkpoint-best-f1/model.bin'
+#         output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
+#         model.load_state_dict(torch.load(output_dir))
         model.to(args.device)
         result=evaluate(args, model, tokenizer)
         
     if args.do_test:
-        checkpoint_prefix = 'checkpoint-best-f1/model.bin'
-        output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-        model.load_state_dict(torch.load(output_dir))
+#         checkpoint_prefix = 'checkpoint-best-f1/model.bin'
+#         output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
+#         model.load_state_dict(torch.load(output_dir))
         model.to(args.device)
         test(args, model, tokenizer,best_threshold=0.5)
 
